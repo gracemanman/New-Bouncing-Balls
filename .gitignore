@@ -1,0 +1,70 @@
+int x1 = 400;
+int y1 = 400;
+int xspeed1=20;
+int yspeed1=20;
+int x2 = 200;
+int y2 = 200;
+int xspeed2=10;
+int yspeed2=10;
+int x3 = 50;
+int y3 = 50;
+int xspeed3=15;
+int yspeed3=15;
+PFont f;
+
+void setup(){
+  size(600,600);
+  frameRate(40);
+  f = createFont("Arial",16,true);
+}
+void draw(){
+  background(63,86,102);
+  textFont(f,45);
+  fill(255);
+  text("Bouncing Balls",200,300);
+  
+  //draw the ball one
+  noStroke();
+  fill(#F5E5C0);
+  ellipse(x1,y1,50,50);
+  //draw the ball two
+  noStroke();
+  fill(#F8CA4D);
+  ellipse(x2,y2,50,50);
+  
+  //draw the ball three
+  noStroke();
+  fill(#EA6045);
+  ellipse(x3,y3,50,50);
+  
+  // set the conditions for the bouncing ball one
+  y1=y1+yspeed1;
+  if(y1>600||y1<0){
+    yspeed1=yspeed1*-1;
+  }
+  x1=x1-xspeed1;
+  if(x1<0||x1>600){
+    xspeed1=xspeed1*-1;
+  }
+  
+  //set the conditions for the bouncing ball two
+  y2=y2+yspeed2;
+  if(y2>600||y2<0){
+    yspeed2=yspeed2*-1;
+  }
+  x2=x2-xspeed2;
+  if(x2<0||x2>600){
+    xspeed2=xspeed2*-1;
+  }
+  
+  //set the conditions for the bouncing ball three
+  y3=y3+yspeed3;
+  if(y3>600||y3<0){
+    yspeed3=yspeed3*-1;
+  }
+  x3=x3-xspeed3;
+  if(x3<0||x3>600){
+    xspeed3=xspeed3*-1;
+  }
+}
+  
